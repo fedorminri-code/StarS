@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StarS | Бронирование</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- SECTION: Фон и декоративные элементы -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow--one"></div>
+  <div class="bg-glow bg-glow--two"></div>
+
+  <!-- SECTION: Навигация mini-site бронирования -->
+  <header class="hero">
+    <nav class="top-nav">
+      <div class="logo">StarS</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="events.html">События</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content glass-card">
+      <p class="chip">Бронирование</p>
+      <h1>Бронирование столов</h1>
+      <p>Каждый слот закрепляется за одним клиентом, поэтому занятое время исключается автоматически.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION: Полная форма брони (mini-site) -->
+    <section class="section">
+      <div class="booking-layout">
+        <form id="bookingForm" class="glass-card booking-form">
+          <h3>Оформить бронь</h3>
+          <label>
+            Имя
+            <input type="text" id="guestName" placeholder="Ваше имя" required />
+          </label>
+          <label>
+            Телефон
+            <input type="tel" id="guestPhone" placeholder="+7 (___) ___-__-__" required />
+          </label>
+          <label>
+            Дата
+            <input type="date" id="bookingDate" required />
+          </label>
+          <label>
+            Время
+            <select id="bookingTime" required></select>
+          </label>
+          <label>
+            Кол-во гостей
+            <input type="number" id="guestCount" min="1" max="10" value="2" required />
+          </label>
+          <button class="btn btn-primary" type="submit">Подтвердить бронь</button>
+          <p class="booking-note">* Для демо данные сохраняются в localStorage браузера.</p>
+        </form>
+
+        <!-- SECTION: Инфоблок с занятыми слотами и дополнительной фичей -->
+        <div class="glass-card booking-info">
+          <h3>Занятые слоты</h3>
+          <div id="bookedList"></div>
+          <hr />
+          <h3>Сет дня</h3>
+          <p>Случайные 3 блюда автоматически добавятся в корзину.</p>
+          <button class="btn btn-ghost" id="addSetBtn">Добавить "Сет дня"</button>
+          <p class="booking-note">После этого откройте главную страницу и увидите корзину уже заполненной.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>StarS • 2026</p>
+    <p class="footer-contacts">Телефон: +7 (999) 123-45-67 • Telegram: @stars_rest • VK: vk.com/stars_rest</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
